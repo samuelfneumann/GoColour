@@ -1,3 +1,3 @@
-module github.com/TwinProduction/go-color
+module github.com/samuelfneumann/gocolour
 
-go 1.16
+go 1.17
