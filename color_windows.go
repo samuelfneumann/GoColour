@@ -1,4 +1,4 @@
-package color
+package gocolour
 
 import (
 	"os"
@@ -13,17 +13,19 @@ func init() {
 		kernel32DLL := syscall.NewLazyDLL("kernel32.dll")
 		setConsoleModeProc := kernel32DLL.NewProc("SetConsoleMode")
 		// If it fails, fallback to no colors
-		if _, _, err := setConsoleModeProc.Call(uintptr(handle), 0x0001|0x0002|0x0004); err != nil && err.Error() != "The operation completed successfully." {
-			Reset = ""
-			Bold = ""
-			Red = ""
-			Green = ""
-			Yellow = ""
-			Blue = ""
-			Purple = ""
-			Cyan = ""
-			Gray = ""
-			White = ""
+		if _, _, err := setConsoleModeProc.Call(uintptr(handle),
+			0x0001|0x0002|0x0004); err != nil &&
+			err.Error() != "The operation completed successfully." {
+			reset = ""
+			bold = ""
+			red = ""
+			green = ""
+			yellow = ""
+			blue = ""
+			purple = ""
+			cyan = ""
+			gray = ""
+			white = ""
 		}
 	}
 }
