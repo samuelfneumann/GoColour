@@ -1,4 +1,4 @@
-# go-color
+# gocolour
 
 ![build](https://github.com/TwinProduction/go-color/workflows/build/badge.svg?branch=master)
 
